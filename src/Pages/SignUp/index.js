@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import {
   Container,
   Logo,
@@ -11,6 +11,12 @@ import Background from '../../componenents/Background'
 import logo from '../../assets/logo.png'
 
 function SignUp({ navigation }) {
+  const emailRef = useRef()
+  const passRef = useRef()
+  const confPassRef = useRef()
+
+  function handleOnSubmit() {}
+
   return (
     <Background>
       <Container>
@@ -20,6 +26,8 @@ function SignUp({ navigation }) {
           autoCorrect={false}
           autoCapitalize="none"
           placeholder="Your fullname"
+          returnKeyType="next"
+          onSubmitEditing={() => emailRef.current.focus()}
         />
         <TextInput
           icon="email"
@@ -27,18 +35,29 @@ function SignUp({ navigation }) {
           autoCorrect={false}
           autoCapitalize="none"
           placeholder="Your e-mail"
+          returnKeyType="next"
+          ref={emailRef}
+          onSubmitEditing={() => passRef.current.focus()}
         />
         <TextInput
           icon="lock"
           placeholder="Your secret password"
           secureTextEntry
+          returnKeyType="next"
+          ref={passRef}
+          onSubmitEditing={() => confPassRef.current.focus()}
         />
         <TextInput
           icon="lock"
           placeholder="Your secret password (again)"
           secureTextEntry
+          returnKeyType="send"
+          ref={confPassRef}
+          onSubmitEditing={handleOnSubmit}
         />
-        <SubmitButton>Register</SubmitButton>
+
+        <SubmitButton onPress={handleOnSubmit}>Register</SubmitButton>
+
         <SignInLink onPress={() => navigation.navigate('SignIn')}>
           <SignInText>Already have an account? Login now.</SignInText>
         </SignInLink>
