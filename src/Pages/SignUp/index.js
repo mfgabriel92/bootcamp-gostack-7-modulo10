@@ -1,11 +1,15 @@
 import React from 'react'
+import { Text } from 'react-native'
+import Background from '../../componenents/Background'
 import { Container } from './styles'
 
 function SignUp() {
   return (
-    <Container>
-      <></>
-    </Container>
+    <Background>
+      <Container>
+        <Text>Sign In</Text>
+      </Container>
+    </Background>
   )
 }
 
