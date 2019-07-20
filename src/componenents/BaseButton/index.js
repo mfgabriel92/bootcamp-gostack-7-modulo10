@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ActivityIndicator } from 'react-native'
 import { Container, Text } from './styles'
 
-function Button({ children, isLoading, ...rest }) {
+function BaseButton({ children, isLoading, ...rest }) {
   return (
     <Container {...rest}>
       {isLoading ? (
@@ -15,12 +15,12 @@ function Button({ children, isLoading, ...rest }) {
   )
 }
 
-Button.propTypes = {
+BaseButton.propTypes = {
   isLoading: PropTypes.bool,
 }
 
-Button.defaultProps = {
+BaseButton.defaultProps = {
   isLoading: false,
 }
 
-export default Button
+export default BaseButton

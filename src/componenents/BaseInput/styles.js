@@ -6,7 +6,6 @@ export const Container = styled.View`
   height: 52px;
   flex-direction: row;
   align-items: center;
-  margin-top: 10px;
 `
 
 export const TextInput = styled.TextInput.attrs({

@@ -3,25 +3,23 @@ import PropTypes from 'prop-types'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { Container, TextInput } from './styles'
 
-function Input({ style, icon, isPassword, ...rest }, ref) {
+function BaseInput({ style, icon, ...rest }, ref) {
   return (
     <Container style={style}>
       {icon && <Icon name={icon} size={20} color="rgba(255, 255, 255, 0.7)" />}
-      <TextInput ref={ref} secureTextEntry={isPassword} {...rest} />
+      <TextInput ref={ref} {...rest} />
     </Container>
   )
 }
 
-Input.propTypes = {
+BaseInput.propTypes = {
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   icon: PropTypes.string,
-  isPassword: PropTypes.bool,
 }
 
-Input.defaultProps = {
+BaseInput.defaultProps = {
   style: {},
   icon: null,
-  isPassword: false,
 }
 
-export default forwardRef(Input)
+export default forwardRef(BaseInput)

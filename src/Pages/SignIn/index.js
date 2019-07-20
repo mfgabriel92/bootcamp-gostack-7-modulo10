@@ -1,16 +1,36 @@
 import React from 'react'
-import { Container } from './styles'
+import {
+  Container,
+  Logo,
+  TextInput,
+  SubmitButton,
+  SignInLink,
+  SignInText,
+} from './styles'
 import Background from '../../componenents/Background'
-import Input from '../../componenents/Input'
-import Button from '../../componenents/Button'
+import logo from '../../assets/logo.png'
 
 function SignIn() {
   return (
     <Background>
       <Container>
-        <Input icon="email" placeholder="Your e-mail" />
-        <Input icon="lock" placeholder="Your password" isPassword />
-        <Button>Enter</Button>
+        <Logo source={logo} />
+        <TextInput
+          icon="email"
+          keyboardType="email-address"
+          autoCorrect={false}
+          autoCapitalize="none"
+          placeholder="Your e-mail"
+        />
+        <TextInput
+          icon="lock"
+          placeholder="Your secret password"
+          secureTextEntry
+        />
+        <SubmitButton>Enter</SubmitButton>
+        <SignInLink>
+          <SignInText>No account yet? Create one for free.</SignInText>
+        </SignInLink>
       </Container>
     </Background>
   )
