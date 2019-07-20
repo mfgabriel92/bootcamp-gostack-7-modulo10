@@ -10,7 +10,7 @@ import {
 import Background from '../../componenents/Background'
 import logo from '../../assets/logo.png'
 
-function SignIn() {
+function SignIn({ navigation }) {
   return (
     <Background>
       <Container>
@@ -28,7 +28,7 @@ function SignIn() {
           secureTextEntry
         />
         <SubmitButton>Enter</SubmitButton>
-        <SignInLink>
+        <SignInLink onPress={() => navigation.navigate('SignUp')}>
           <SignInText>No account yet? Create one for free.</SignInText>
         </SignInLink>
       </Container>
