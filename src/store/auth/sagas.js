@@ -42,8 +42,9 @@ export function* signUp({ payload: { name, email, password } }) {
       name,
       email,
       password,
-      provider: true,
     })
+
+    Alert.alert('Success', 'Registered successfully')
   } catch (e) {
     Alert.alert('Error', 'Failed to sign-up')
     yield put(failure())

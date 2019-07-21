@@ -1,4 +1,5 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   Container,
   Logo,
@@ -7,13 +8,20 @@ import {
   SignInLink,
   SignInText,
 } from './styles'
+import { signIn } from '../../store/auth/actions'
 import Background from '../../componenents/Background'
 import logo from '../../assets/logo.png'
 
 function SignIn({ navigation }) {
+  const [email, setEmail] = useState('')
+  const [pass, setPass] = useState('')
   const passRef = useRef()
+  const dispatch = useDispatch()
+  const isLoading = useSelector(state => state.auth.isLoading)
 
-  function handleOnSubmit() {}
+  function handleOnSubmit() {
+    dispatch(signIn(email, pass))
+  }
 
   return (
     <Background>
@@ -27,6 +35,8 @@ function SignIn({ navigation }) {
           placeholder="Your e-mail"
           returnKeyType="next"
           onSubmitEditing={() => passRef.current.focus()}
+          value={email}
+          onChangeText={setEmail}
         />
         <TextInput
           icon="lock"
@@ -35,9 +45,13 @@ function SignIn({ navigation }) {
           returnKeyType="send"
           ref={passRef}
           onSubmitEditing={handleOnSubmit}
+          value={pass}
+          onChangeText={setPass}
         />
 
-        <SubmitButton onPress={handleOnSubmit}>Enter</SubmitButton>
+        <SubmitButton onPress={handleOnSubmit} isLoading={isLoading}>
+          Enter
+        </SubmitButton>
 
         <SignInLink onPress={() => navigation.navigate('SignUp')}>
           <SignInText>No account yet? Create one for free.</SignInText>

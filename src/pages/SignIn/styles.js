@@ -22,7 +22,9 @@ export const TextInput = styled(BaseInput)`
   margin-top: 15px;
 `
 
-export const SubmitButton = styled(BaseButton)``
+export const SubmitButton = styled(BaseButton).attrs(props => ({
+  disabled: props.isLoading,
+}))``
 
 export const SignInLink = styled(TouchableOpacity)`
   background: transparent;

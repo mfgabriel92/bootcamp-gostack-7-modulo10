@@ -1,13 +1,14 @@
 import styled from 'styled-components/native'
-import { RectButton } from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native'
 
-export const Container = styled(RectButton)`
+export const Button = styled(TouchableOpacity)`
   height: 52px;
   background-color: #3b9eff;
   align-items: center;
   justify-content: center;
   margin-top: 15px;
   width: 100%;
+  opacity: ${props => (props.disabled ? 0.5 : 1)};
 `
 
 export const Text = styled.Text`
