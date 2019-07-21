@@ -1,12 +1,12 @@
 import React from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import Dashboard from './Dashboard'
+import Profile from './Profile'
 
 export default {
-  screen: Dashboard,
+  screen: Profile,
   navigationOptions: () => ({
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="dashboard" size={24} color={tintColor} />
+      <Icon name="person" size={24} color={tintColor} />
     ),
   }),
 }

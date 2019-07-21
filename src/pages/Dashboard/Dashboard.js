@@ -1,11 +1,11 @@
 import React from 'react'
-import { Container } from './styles'
+import Background from '../../componenents/Background'
 
 function Dashboard() {
   return (
-    <Container>
+    <Background>
       <></>
-    </Container>
+    </Background>
   )
 }
 
