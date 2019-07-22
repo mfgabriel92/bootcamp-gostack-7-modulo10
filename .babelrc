@@ -1,0 +1,15 @@
+{
+  "plugins": [
+    [
+      "dotenv-import",
+      {
+        "moduleName": "babel-plugin-dotenv-import",
+        "path": ".env",
+        "blacklist": null,
+        "whitelist": null,
+        "safe": false,
+        "allowUndefined": false
+      }
+    ]
+  ]
+}

@@ -4,7 +4,7 @@ import {
   createBottomTabNavigator,
 } from 'react-navigation'
 import { darken } from 'polished'
-import { COLOR_2 } from 'react-native-dotenv'
+import { COLOR_2 } from 'babel-plugin-dotenv-import'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Dashboard from './pages/Dashboard'
