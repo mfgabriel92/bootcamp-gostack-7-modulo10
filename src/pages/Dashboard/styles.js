@@ -9,12 +9,11 @@ export const Title = styled.Text`
   font-size: 20px;
   font-weight: bold;
   align-self: center;
-  margin-top: 30px;
+  margin: 30px 0;
 `
 
 export const Appointments = styled.FlatList.attrs({
   contentContainerStyle: {
-    padding: 30,
     showsVerticalScrollIndicator: false,
   },
 })``
