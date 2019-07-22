@@ -1,26 +1,45 @@
-import React from 'react'
+import React, { useMemo } from 'react'
+import PropTypes from 'prop-types'
+import { parseISO, formatRelative } from 'date-fns'
 import { TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Container, Left, Avatar, Info, Name, Time } from './styles'
 
-function Appointment() {
+function Appointment({ data, onCancel }) {
+  const time = useMemo(() => {
+    return formatRelative(parseISO(data.date), new Date(), {
+      addSuffix: true,
+    })
+  }, [data.date])
+
   return (
-    <Container>
+    <Container isPast={data.past}>
       <Left>
         <Avatar
-          source={{ uri: 'https://api.adorable.io/avatar/50/rocketseat.png' }}
+          source={{
+            uri: data.provider.avatar
+              ? data.provider.avatar.url
+              : `https://api.adorable.io/avatar/50/${data.provider.name}.png`,
+          }}
         />
         <Info>
-          <Name>Gabriel Fernandes</Name>
-          <Time>In 3 hours</Time>
+          <Name>{data.provider.name}</Name>
+          <Time>{time}</Time>
         </Info>
       </Left>
 
-      <TouchableOpacity onPress={() => {}}>
-        <Icon name="event-busy" size={23} color="#fc4675" />
-      </TouchableOpacity>
+      {data.cancelable && !data.canceled_at && (
+        <TouchableOpacity onPress={onCancel}>
+          <Icon name="event-busy" size={23} color="#fc4675" />
+        </TouchableOpacity>
+      )}
     </Container>
   )
+}
+
+Appointment.propTypes = {
+  data: PropTypes.shape().isRequired,
+  onCancel: PropTypes.func.isRequired,
 }
 
 export default Appointment

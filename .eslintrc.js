@@ -21,6 +21,7 @@ module.exports = {
     'global-require': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    'no-use-before-define': 'off',
     'no-param-reassign': 'off',
     'no-underscore-dangle': 'off',
     'no-console': ['error', { allow: ['tron'] }],
