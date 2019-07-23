@@ -8,6 +8,7 @@ import { COLOR_2 } from 'babel-plugin-dotenv-import'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
 import Dashboard from './pages/Dashboard'
+import New from './pages/New'
 import Profile from './pages/Profile'
 
 export default (isSigned = false) =>
@@ -21,6 +22,7 @@ export default (isSigned = false) =>
         App: createBottomTabNavigator(
           {
             Dashboard,
+            New,
             Profile,
           },
           {

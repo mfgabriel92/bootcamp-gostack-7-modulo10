@@ -23,6 +23,7 @@ export function* signIn({ payload: { email, password } }) {
 
     if (data.user.provider) {
       Alert.alert('Error', 'User cannot be a provider')
+      yield put(failure())
       return
     }
 

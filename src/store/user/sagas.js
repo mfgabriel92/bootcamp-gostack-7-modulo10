@@ -7,7 +7,7 @@ import types from './types'
 export function* updateUser({ payload }) {
   const { name, email, ...rest } = payload.data
   const me = Object.assign({ name, email }, rest.oldPassword ? rest : {})
-  console.tron.log(me)
+
   try {
     const response = yield call(api.put, 'users', me)
     Alert.alert('Success', 'Profile successfully updated')
