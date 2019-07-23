@@ -26,6 +26,7 @@ export default (isSigned = false) =>
             Profile,
           },
           {
+            resetOnBlur: true,
             tabBarOptions: {
               showLabel: false,
               keyboardHidesTabBar: true,
