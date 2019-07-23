@@ -18,14 +18,18 @@ export const TextInput = styled(BaseInput)`
   margin-top: 15px;
 `
 
-export const SubmitButton = styled(BaseButton).attrs(props => ({
-  disabled: props.isLoading,
-}))``
-
 export const Form = styled.View``
 
 export const Separator = styled.View`
   height: 1px;
   background: rgba(255, 255, 255, 0.3);
   margin-top: 15px;
+`
+
+export const SubmitButton = styled(BaseButton).attrs(props => ({
+  disabled: props.isLoading,
+}))``
+
+export const LogoutButton = styled(SubmitButton)`
+  background: #fc4675;
 `

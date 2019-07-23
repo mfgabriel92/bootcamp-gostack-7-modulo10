@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateUser } from '../../store/user/actions'
+import { logoff } from '../../store/auth/actions'
 import {
   Container,
   Title,
@@ -8,6 +9,7 @@ import {
   TextInput,
   Separator,
   SubmitButton,
+  LogoutButton,
 } from './styles'
 import Background from '../../componenents/Background'
 
@@ -35,6 +37,10 @@ function Profile() {
 
   function handleOnSubmit() {
     dispatch(updateUser({ name, email, oldPass, newPass, confPass }))
+  }
+
+  function handleOnLogout() {
+    dispatch(logoff())
   }
 
   return (
@@ -98,6 +104,7 @@ function Profile() {
           />
 
           <SubmitButton onPress={handleOnSubmit}>Update</SubmitButton>
+          <LogoutButton onPress={handleOnLogout}>Logout</LogoutButton>
         </Form>
       </Container>
     </Background>
