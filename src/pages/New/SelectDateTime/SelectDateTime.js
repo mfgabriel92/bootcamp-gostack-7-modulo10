@@ -1,11 +1,14 @@
 import React from 'react'
+import Background from '../../../componenents/Background'
 import { Container } from './styles'
 
 function SelectDateTime() {
   return (
-    <Container>
-      <></>
-    </Container>
+    <Background>
+      <Container>
+        <></>
+      </Container>
+    </Background>
   )
 }
 
