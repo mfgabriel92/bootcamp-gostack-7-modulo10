@@ -12,6 +12,8 @@ function Appointment({ data, onCancel }) {
     })
   }, [data.date])
 
+  console.tron.log(data.cancelable)
+
   return (
     <Container isPast={data.past}>
       <Left>
@@ -27,7 +29,6 @@ function Appointment({ data, onCancel }) {
           <Time>{time}</Time>
         </Info>
       </Left>
-
       {data.cancelable && !data.canceled_at && (
         <TouchableOpacity onPress={onCancel}>
           <Icon name="event-busy" size={23} color="#fc4675" />

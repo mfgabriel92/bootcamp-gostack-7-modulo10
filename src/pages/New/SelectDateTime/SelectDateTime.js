@@ -23,10 +23,10 @@ function SelectDateTime({ navigation }) {
     loadHours()
   }, [date, provider.id])
 
-  function handleSelectHour(hour) {
+  function handleSelectHour(time) {
     navigation.navigate('Confirm', {
       provider,
-      hour,
+      time,
     })
   }
 
