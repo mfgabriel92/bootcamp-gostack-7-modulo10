@@ -9,7 +9,7 @@ export default {
     headerLeft: () => (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Dashboard')
+          navigation.goBack()
         }}
       >
         <Icon name="chevron-left" size={24} color="#fff" />

@@ -30,6 +30,7 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'react/jsx-one-expression-per-line': 'off',
     'react-native/no-raw-text': 'off',
+    'react/forbid-prop-types': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'react/button-has-type': 'off',
