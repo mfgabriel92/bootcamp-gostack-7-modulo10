@@ -4,6 +4,7 @@ import { StatusBar } from 'react-native'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Provider } from 'react-redux'
 import { COLOR_1 } from 'babel-plugin-dotenv-import'
+import CodePush from 'react-native-code-push'
 import { store, persistor } from './store'
 import App from './App'
 
@@ -18,4 +19,6 @@ function Index() {
   )
 }
 
-export default Index
+export default CodePush({
+  checkFrequency: CodePush.CheckFrequency.ON_APP_RESUME,
+})(Index)
